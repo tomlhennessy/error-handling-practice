@@ -19,9 +19,26 @@ let res = sum(null);
 console.log(res);
 
 // 2.
+function sayName(name) {
+  if (typeof name !== 'string') {
+    throw new TypeError("Invalid name! Must be a string!");
+  }
+  console.log(name);
+}
+
 // tests
-sayName("Alex");
-sayName(1);
+try {
+  sayName("Alex");
+} catch (error) {
+  console.log(error.message);
+}
+
+try {
+  sayName(1); // this should trigger the error
+} catch (error) {
+  console.log(error.message);
+}
+
 // Your code here
 
 // 3.
