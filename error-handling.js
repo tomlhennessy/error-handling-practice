@@ -49,3 +49,10 @@ function greet(greeting) {
 
   console.log(greeting);
 }
+
+// test case: causes greet function to throw an error
+try {
+  greet(); // this should trigger error since no argument is passed
+} catch (error) {
+  console.log("Hello World!");
+}
