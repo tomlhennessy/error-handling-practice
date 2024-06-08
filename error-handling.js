@@ -1,8 +1,16 @@
 // 1.
 function sum(array) {
   let sum = 0;
-  for (let i = 0; i < array.length; i++) {
-    sum += array[i];
+  try {
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+  } catch (error) {
+    if (error instanceof TypeError) {
+      console.log("Error: ", error.message);
+    } else {
+      throw error; // rethrow if it's not the expected error
+    }
   }
   return sum;
 }
